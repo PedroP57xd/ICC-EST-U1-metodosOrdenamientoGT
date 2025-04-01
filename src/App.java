@@ -127,13 +127,39 @@ public class App {
                 case 4:
                     int[] resultados;
                     System.out.println("METODO BURBUJA MEJORADO");
-                    MetodoBurbujaMejorado mBM = new MetodoBurbujaMejorado();
-                    mBM.printArray(Array);
-                    resultados = mBM.ordenarAcendente(Array);
-                    mBM.printArray(Array);
-                    System.out.println(" Comparaciones: -> " + resultados[0]);
-                    System.out.println(" Cambios: -> " + resultados[1] + "\n\n");
-                    break;
+
+                    if (conPasos == true) {
+                        MetodoBurbujaMejorado mBM = new MetodoBurbujaMejorado();
+                        mBM.printArray(Array);
+                        if (orden.equalsIgnoreCase("a")) {
+                            resultados = mBM.ordenarAcendente(Array);
+                            mBM.printArray(Array);
+                            System.out.println(" Comparaciones: -> " + resultados[0]);
+                            System.out.println(" Cambios: -> " + resultados[1] + "\n\n");
+                        } else if (orden.equalsIgnoreCase("d")) {
+                            resultados = mBM.ordenarAcendente(Array);
+                            mBM.printArray(Array);
+                            System.out.println(" Comparaciones: -> " + resultados[0]);
+                            System.out.println(" Cambios: -> " + resultados[1] + "\n\n");
+                        }
+
+                    } else if (conPasos == false) {
+                        MetodoBurbujaMejorado mBMP = new MetodoBurbujaMejorado();
+                        mBMP.printArray(Array);
+                        if (orden.equalsIgnoreCase("a")) {
+                            resultados = mBM.ordenarAcendente(Array);
+                            mBM.printArray(Array);
+                            System.out.println(" Comparaciones: -> " + resultados[0]);
+                            System.out.println(" Cambios: -> " + resultados[1] + "\n\n");
+                        } else if (orden.equalsIgnoreCase("d")) {
+                            resultados = mBM.ordenarAcendente(Array);
+                            mBM.printArray(Array);
+                            System.out.println(" Comparaciones: -> " + resultados[0]);
+                            System.out.println(" Cambios: -> " + resultados[1] + "\n\n");
+                        }
+                        break;
+                    }
+
                 default:
                     System.out.println("\n\nERROR: OPCIÓN INVALIDA \n\n INTENTELO NUEVAMENTE\n");
                     break;
