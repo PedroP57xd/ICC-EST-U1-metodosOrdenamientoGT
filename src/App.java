@@ -28,13 +28,14 @@ public class App {
             System.out.println("¿Deseas ver los pasos? (true/false): ");
             boolean conPasos = scanner.nextBoolean();
 
-            String orden = getValidString(scanner, "¿Desea ver el orden Acendentemento o Decensdentemente",new String[] { "A", "D" });
+            String orden = getValidString(scanner, "¿Desea ver el orden Acendentemento o Decensdentemente",
+                    new String[] { "A", "D" });
 
             switch (metodo) {
                 case 1:
                     System.out.println("METODO BURBUJA");
-                  
-                    if (conPasos==false) {
+
+                    if (conPasos == false) {
                         MetodoBurbuja mB = new MetodoBurbuja();
                         mB.imprimirArreglo(Array);
                         System.out.println(" ");
@@ -48,7 +49,7 @@ public class App {
                             System.out.println(" \n\n");
                         }
                         break;
-                    } else if (conPasos==true) {
+                    } else if (conPasos == true) {
                         MetodoBurbuja mBP = new MetodoBurbuja();
                         System.out.println("Arreglo Original");
                         mBP.imprimirArreglo(Array);
@@ -69,16 +70,31 @@ public class App {
                 case 2:
                     System.out.println("METODO SELECCIÓN");
 
-                    MetodoSeleccion mS = new MetodoSeleccion();
-
-                    mS.printArray(Array);
-                    System.out.println("Arreglo Original");
-                    mS.ordenar(Array, true);
-                    mS.printArray(Array);
-                    System.out.println("Arreglo Ordenado ");
-                    mS.ordenar(Array, false);
-                    mS.printArray(Array);
-                    System.out.println("Arreglo Ordenado \n\n");
+                    if (conPasos == false) {
+                        MetodoSeleccion mS = new MetodoSeleccion();
+                        mS.printArray(Array);
+                        System.out.println(" ");
+                        if (orden.equalsIgnoreCase("a")) {
+                            mS.ordenar(Array, true);
+                            mS.printArray(Array);
+                        } else if (orden.equalsIgnoreCase("d")) {
+                            mS.ordenar(Array, false);
+                            mS.printArray(Array);
+                        }
+                    } else if (conPasos == true) {
+                        MetodoSeleccion mSP = new MetodoSeleccion();
+                        System.out.println("Arreglo Original");
+                        mSP.printArray(Array);
+                        if (orden.equalsIgnoreCase("a")) {
+                            mSP.ordenarPasos(Array, true);
+                            System.out.println("Arreglo Ordenado ");
+                            mSP.printArray(Array);
+                        } else if (orden.equalsIgnoreCase("d")) {
+                            mSP.ordenarPasos(Array, false);
+                            System.out.println("Arreglo Ordenado ");
+                            mSP.printArray(Array);
+                        }
+                    }
                     break;
                 case 3:
                     System.out.println("METODO INSERCIÓN");
@@ -89,17 +105,8 @@ public class App {
                     mI.printArray(Array);
                     System.out.println("Arreglo Ordenado \n\n ");
                     break;
+                
                 case 4:
-                    System.out.println("METODO BINSERCIÓN CON PASOS");
-                    MetodoInsercion mIP = new MetodoInsercion();
-                    System.out.println("Arreglo Original");
-                    mIP.printArray(Array);
-                    System.out.println("Arreglo Ordenado con pasos");
-                    mIP.ordenarAcendentePasos(Array);
-                    mIP.printArray(Array);
-                    System.out.println(" \n\n");
-                    break;
-                case 5:
                     int[] resultados;
                     System.out.println("METODO BURBUJA MEJORADO");
                     MetodoBurbujaMejorado mBM = new MetodoBurbujaMejorado();
