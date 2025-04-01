@@ -147,13 +147,13 @@ public class App {
                         MetodoBurbujaMejorado mBMP = new MetodoBurbujaMejorado();
                         mBMP.printArray(Array);
                         if (orden.equalsIgnoreCase("a")) {
-                            resultados = mBM.ordenarAcendente(Array);
-                            mBM.printArray(Array);
+                            resultados = mBMP.ordenarAcendentePasos(Array);
+                            mBMP.printArray(Array);
                             System.out.println(" Comparaciones: -> " + resultados[0]);
                             System.out.println(" Cambios: -> " + resultados[1] + "\n\n");
                         } else if (orden.equalsIgnoreCase("d")) {
-                            resultados = mBM.ordenarAcendente(Array);
-                            mBM.printArray(Array);
+                            resultados = mBMP.ordenarDecendentePasos(Array);
+                            mBMP.printArray(Array);
                             System.out.println(" Comparaciones: -> " + resultados[0]);
                             System.out.println(" Cambios: -> " + resultados[1] + "\n\n");
                         }
