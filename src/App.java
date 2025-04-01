@@ -28,23 +28,21 @@ public class App {
             System.out.println("¿Deseas ver los pasos? (true/false): ");
             boolean conPasos = scanner.nextBoolean();
 
-            String orden = getValidString(scanner, "¿Desea ver el orden Acendentemento o Decensdentemente",
-                    new String[] { "A", "D" });
+            String orden = getValidString(scanner, "¿Desea ver el orden Acendentemento o Decensdentemente",new String[] { "A", "D" });
 
             switch (metodo) {
                 case 1:
                     System.out.println("METODO BURBUJA");
-
-                    
-                    
+                  
                     if (conPasos==false) {
                         MetodoBurbuja mB = new MetodoBurbuja();
                         mB.imprimirArreglo(Array);
-                        if ((orden == "a") || (orden == "A")) {
+                        System.out.println(" ");
+                        if (orden.equalsIgnoreCase("a")) {
                             mB.ordenar(Array, true);
                             mB.imprimirArreglo(Array);
                             System.out.println(" \n\n");
-                        } else if ((orden == "d") || (orden == "D")) {
+                        } else if (orden.equalsIgnoreCase("d")) {
                             mB.ordenar(Array, false);
                             mB.imprimirArreglo(Array);
                             System.out.println(" \n\n");
@@ -54,12 +52,12 @@ public class App {
                         MetodoBurbuja mBP = new MetodoBurbuja();
                         System.out.println("Arreglo Original");
                         mBP.imprimirArreglo(Array);
-                        if ((orden == "a") || (orden == "A")) {
+                        if (orden.equalsIgnoreCase("a")) {
                             mBP.ordenarPasos(Array, true);
                             System.out.println("Arreglo Ordenado");
                             mBP.imprimirArreglo(Array);
                             System.out.println(" \n\n");
-                        } else if ((orden == "d") || (orden == "D")) {
+                        } else if (orden.equalsIgnoreCase("d")) {
                             mBP.ordenarPasos(Array, false);
                             System.out.println("Arreglo Ordenado");
                             mBP.imprimirArreglo(Array);
