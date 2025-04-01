@@ -76,7 +76,7 @@ public class MetodoSeleccion {
             int iM = i;
             for (int j = i + 1; j < arreglo.length; j++) {
                 System.out.println("\nComparando: arreglo[" + j + "] = " + arreglo[j] + " con arreglo[" + iM + "] = " + arreglo[iM]);
-                if (arreglo[j] > arreglo[iM]) {
+                if (arreglo[j] < arreglo[iM]) {
                     System.out.println(" -> Nuevo máximo encontrado en posición " + j + ": " + arreglo[j]);
                     iM = j;
                 }
@@ -100,7 +100,7 @@ public class MetodoSeleccion {
                 
                 if (isDes) {
                     
-                    ordenarAcendentePasos(arreglo);(arreglo);
+                    ordenarAcendentePasos(arreglo);
                 } else {
                     ordenarDesendentePasos(arreglo);
                 }

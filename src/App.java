@@ -94,18 +94,36 @@ public class App {
                             System.out.println("Arreglo Ordenado ");
                             mSP.printArray(Array);
                         }
+                        break;
                     }
-                    break;
                 case 3:
                     System.out.println("METODO INSERCIÓN");
-                    MetodoInsercion mI = new MetodoInsercion();
-                    mI.printArray(Array);
-                    System.out.println("Arreglo Original");
-                    mI.ordenarAcendente(Array);
-                    mI.printArray(Array);
-                    System.out.println("Arreglo Ordenado \n\n ");
-                    break;
-                
+                    if (conPasos == false) {
+                        MetodoInsercion mI = new MetodoInsercion();
+                        mI.printArray(Array);
+                        if (orden.equalsIgnoreCase("a")) {
+                            mI.ordenarAcendente(Array);
+                            mI.printArray(Array);
+                        } else if (orden.equalsIgnoreCase("b")) {
+                            mI.ordenarDecendente(Array);
+                            mI.printArray(Array);
+                        }
+                    } else if (conPasos == true) {
+                        MetodoInsercion mIP = new MetodoInsercion();
+                        System.out.println("Arreglo Original");
+                        mIP.printArray(Array);
+                        if (orden.equalsIgnoreCase("a")) {
+                            mIP.ordenarAcendentePasos(Array);
+                            System.out.println("Arreglo Ordenado ");
+                            mIP.printArray(Array);
+                        } else if (orden.equalsIgnoreCase("b")) {
+                            mIP.ordenarDecendentePasos(Array);
+                            System.out.println("Arreglo Ordenado ");
+                            mIP.printArray(Array);
+                        }
+                        break;
+                    }
+
                 case 4:
                     int[] resultados;
                     System.out.println("METODO BURBUJA MEJORADO");

@@ -13,6 +13,19 @@ public class MetodoInsercion {
             arreglo[j + 1] = aux;
         }
     }
+    public void ordenarDecendente(int[] arreglo){
+        int tam = arreglo.length;
+        for (int i = 1; i > tam; i++) {
+            int aux = arreglo[i];
+            int j = i - 1;
+
+            while (j >= 0 && arreglo[j] > aux) {
+                arreglo[j + 1] = arreglo[j];
+                j--;
+            }
+            arreglo[j + 1] = aux;
+        }
+    }
 
     public void ordenarAcendentePasos(int[] arreglo) {
 
@@ -34,21 +47,6 @@ public class MetodoInsercion {
             System.out.println("aux= " + aux + " se inserta en la posición " + (j + 1));
         }
     }
-
-    public void ordenarDecendente(int[] arreglo){
-        int tam = arreglo.length;
-        for (int i = 1; i > tam; i++) {
-            int aux = arreglo[i];
-            int j = i - 1;
-
-            while (j >= 0 && arreglo[j] > aux) {
-                arreglo[j + 1] = arreglo[j];
-                j--;
-            }
-            arreglo[j + 1] = aux;
-        }
-    }
-
     public void ordenarDecendentePasos(int[] arreglo) {
 
         int tam = arreglo.length;
